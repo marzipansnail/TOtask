@@ -9,10 +9,9 @@ public class Subscription {
 
 
     public void notifyDevice(){
-        if(isUpToDate()){
-            System.out.println("Device got his message");
-        }else{
-            device.send();
+        if (!isUpToDate()) {
+            device.getMessage(game.getLatestResults());
+            this.lastUpdate = new Date();
         }
     }
 
@@ -25,6 +24,6 @@ public class Subscription {
     }
 
     private boolean isUpToDate() {
-        return false;
+        return lastUpdate.after(this.game.getLatestResultsDate());
     }
 }

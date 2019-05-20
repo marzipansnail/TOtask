@@ -1,5 +1,9 @@
 package com.task;
 
+import java.util.Date;
+
 public interface IGame {
-    public String getLatestResults();
+    String getLatestResults();
+    Date getLatestResultsDate();
+    void play();
 }

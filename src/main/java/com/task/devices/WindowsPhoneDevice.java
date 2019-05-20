@@ -3,7 +3,12 @@ package com.task.devices;
 import com.task.IDevice;
 
 public class WindowsPhoneDevice implements IDevice {
-    public String send(String msg) {
-        return null;
+    public void getMessage(String msg) {
+        System.out.println("Windows Phone got message:\n");
+        System.out.println(msg);
+    }
+
+    public void chooseGame() {
+
     }
 }
