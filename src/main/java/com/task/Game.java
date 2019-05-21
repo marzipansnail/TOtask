@@ -1,34 +1,31 @@
 package com.task;
-
 import java.util.Date;
+import java.util.Random;
 
-public class Game implements IGame{
+class Game implements IGame{
     public String name;
-    private String latestResults;
+    private String latestResults = "0";
     private Date latestResultsDate;
 
-    public Game(String name, String latestResults, Date latestResultsDate) {
+    public Game(String name) {
         this.name = name;
-        this.latestResults = latestResults;
-        this.latestResultsDate = latestResultsDate;
+        this.latestResultsDate = new Date();
     }
 
-    public String getLatestResults() {
-        return null;
+    public String getLatestResults()
+    {
+        return latestResults;
     }
 
-    public Date getLatestResultsDate() {
-        return null;
-    }
-
-    public Game(String latestResults, Date latestResultsDate) {
-        this.latestResults = latestResults;
-        this.latestResultsDate = latestResultsDate;
+    public Date getLatestResultsDate()
+    {
+        return latestResultsDate;
     }
 
     public void play() {
-        //tutaj dzieje sie rozgrywka i na koncu jest notify
-        // z subscribemenagera
-        //aktualizujemy zmienne z rozegraniem gierki
+        Random rand = new Random();
+        Integer n = rand.nextInt(20);
+        latestResults = n.toString();
+        latestResultsDate = new Date ();
     }
 }
