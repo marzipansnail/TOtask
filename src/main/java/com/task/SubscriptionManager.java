@@ -3,7 +3,7 @@ package com.task;
 import java.util.ArrayList;
 
 public class SubscriptionManager {
-    private ArrayList<Subscription> subscriptions;
+    private List<Subscription> subscriptions = new ArrayList<> ();
 
     public void notifySubscribers(){
         for(Subscription subscriber : subscriptions){
@@ -17,8 +17,10 @@ public class SubscriptionManager {
             System.out.println("Subscription successfully removed");
         }
     }
-    public void register(Subscription subscription){
-        if(!subscriptions.contains(subscription)){
+    public void register(Subscription subscription)
+    {
+        if(!subscriptions.contains(subscription))
+        {
             subscriptions.add(subscription);
             System.out.println("Subscription successfully added");
         }
